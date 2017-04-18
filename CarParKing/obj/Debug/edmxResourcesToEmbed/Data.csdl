@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarParKingDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Parkplatzdetails">
+    <Key>
+      <PropertyRef Name="ParkplatzdetailD" />
+    </Key>
+    <Property Name="ParkplatzdetailD" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParkplatzübersichtID" Type="Int64" Nullable="false" />
+    <Property Name="AnzahlParkplätze" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Parkplatzübersicht" Relationship="Self.FK_Parkplatzdetails_Parkplatzübersicht" FromRole="Parkplatzdetails" ToRole="Parkplatzübersicht" />
+  </EntityType>
+  <EntityType Name="Parkplatzübersicht">
+    <Key>
+      <PropertyRef Name="ParkplatzübersichtID" />
+    </Key>
+    <Property Name="ParkplatzübersichtID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParkplatzName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Parkplatzdetails" Relationship="Self.FK_Parkplatzdetails_Parkplatzübersicht" FromRole="Parkplatzübersicht" ToRole="Parkplatzdetails" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Parkplatzdetails_Parkplatzübersicht">
+    <End Role="Parkplatzübersicht" Type="Self.Parkplatzübersicht" Multiplicity="1" />
+    <End Role="Parkplatzdetails" Type="Self.Parkplatzdetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parkplatzübersicht">
+        <PropertyRef Name="ParkplatzübersichtID" />
+      </Principal>
+      <Dependent Role="Parkplatzdetails">
+        <PropertyRef Name="ParkplatzübersichtID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CarParKingDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Parkplatzdetails" EntityType="Self.Parkplatzdetails" />
+    <EntitySet Name="Parkplatzübersicht" EntityType="Self.Parkplatzübersicht" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_Parkplatzdetails_Parkplatzübersicht" Association="Self.FK_Parkplatzdetails_Parkplatzübersicht">
+      <End Role="Parkplatzübersicht" EntitySet="Parkplatzübersicht" />
+      <End Role="Parkplatzdetails" EntitySet="Parkplatzdetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

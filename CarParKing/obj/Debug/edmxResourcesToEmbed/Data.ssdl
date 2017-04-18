@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarParKingDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Parkplatzdetails">
+    <Key>
+      <PropertyRef Name="ParkplatzdetailD" />
+    </Key>
+    <Property Name="ParkplatzdetailD" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ParkplatzübersichtID" Type="bigint" Nullable="false" />
+    <Property Name="AnzahlParkplätze" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Parkplatzübersicht">
+    <Key>
+      <PropertyRef Name="ParkplatzübersichtID" />
+    </Key>
+    <Property Name="ParkplatzübersichtID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ParkplatzName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Parkplatzdetails_Parkplatzübersicht">
+    <End Role="Parkplatzübersicht" Type="Self.Parkplatzübersicht" Multiplicity="1" />
+    <End Role="Parkplatzdetails" Type="Self.Parkplatzdetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parkplatzübersicht">
+        <PropertyRef Name="ParkplatzübersichtID" />
+      </Principal>
+      <Dependent Role="Parkplatzdetails">
+        <PropertyRef Name="ParkplatzübersichtID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CarParKingDBModelStoreContainer">
+    <EntitySet Name="Parkplatzdetails" EntityType="Self.Parkplatzdetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Parkplatzübersicht" EntityType="Self.Parkplatzübersicht" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Parkplatzdetails_Parkplatzübersicht" Association="Self.FK_Parkplatzdetails_Parkplatzübersicht">
+      <End Role="Parkplatzübersicht" EntitySet="Parkplatzübersicht" />
+      <End Role="Parkplatzdetails" EntitySet="Parkplatzdetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
