@@ -1,0 +1,60 @@
+﻿<Window x:Class="CarParKing.View.TicketWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarParKing.View"
+        mc:Ignorable="d"
+        Title="TicketWindow" Height="350" Width="525">
+    <Grid>
+
+        <!-- Grid Definition-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+                
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="28" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Menu Bar -->
+        <Menu Grid.Row="0" Grid.Column="0" IsMainMenu="True">
+            <MenuItem Header="_View" />
+            <MenuItem Header="_Edit" />
+            <MenuItem Header="_Window" />
+            <MenuItem Header="_Help" />
+        </Menu>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Name:"/>
+        <Label Grid.Row="2" Grid.Column="3" Content="Suche"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="Comment:"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Margin="3" />
+
+
+        <TextBox Grid.Column="1" Grid.Row="2" Margin="3" />
+        <TextBox Grid.Column="1" Grid.Row="3" Margin="3" />
+        <Button Grid.Column="1" Grid.Row="4" HorizontalAlignment="Right"  MinWidth="80" Margin="3" Content="Send"  />
+
+       
+
+
+        
+
+
+
+
+
+
+
+
+
+    </Grid>
+
+
+</Window>
