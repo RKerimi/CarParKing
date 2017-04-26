@@ -26,7 +26,7 @@ namespace CarParKing
             InitializeComponent();
         }
 
-        private void OnClick(object sender, RoutedEventArgs e)
+        /*private void OnClick(object sender, RoutedEventArgs e)
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =
@@ -49,6 +49,16 @@ namespace CarParKing
                     }
                 }
             }
+        }*/
+
+        private void ticketClick(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new TicketUbersicht();
+        }
+
+        private void umsatzClick(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Umsatzansicht();
         }
     }
 }

@@ -17,8 +17,8 @@ C:\Users\Refik Kerimi\documents\visual studio 2017\Projects\CarParKing\CarParKin
 C:\Users\Refik Kerimi\documents\visual studio 2017\Projects\CarParKing\CarParKing\obj\Debug\CarParKing.exe
 C:\Users\Refik Kerimi\documents\visual studio 2017\Projects\CarParKing\CarParKing\obj\Debug\CarParKing.pdb
 C:\Users\Refik Kerimi\documents\visual studio 2017\Projects\CarParKing\CarParKing\obj\Debug\MainWindow.g.cs
-C:\Users\Refik Kerimi\documents\visual studio 2017\Projects\CarParKing\CarParKing\obj\Debug\TicketWindow.g.cs
 C:\Users\Refik Kerimi\documents\visual studio 2017\Projects\CarParKing\CarParKing\obj\Debug\MainWindow.baml
-C:\Users\Refik Kerimi\documents\visual studio 2017\Projects\CarParKing\CarParKing\obj\Debug\TicketWindow.baml
-C:\Users\Refik Kerimi\documents\visual studio 2017\Projects\CarParKing\CarParKing\obj\Debug\View\Page1.g.cs
-C:\Users\Refik Kerimi\documents\visual studio 2017\Projects\CarParKing\CarParKing\obj\Debug\View\Page1.baml
+C:\Users\Refik Kerimi\documents\visual studio 2017\Projects\CarParKing\CarParKing\obj\Debug\TicketUbersicht.g.cs
+C:\Users\Refik Kerimi\documents\visual studio 2017\Projects\CarParKing\CarParKing\obj\Debug\TicketUbersicht.baml
+C:\Users\Refik Kerimi\documents\visual studio 2017\Projects\CarParKing\CarParKing\obj\Debug\Umsatzansicht.g.cs
+C:\Users\Refik Kerimi\documents\visual studio 2017\Projects\CarParKing\CarParKing\obj\Debug\Umsatzansicht.baml

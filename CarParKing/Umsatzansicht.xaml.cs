@@ -13,16 +13,27 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CarParKing.View
+namespace CarParKing
 {
     /// <summary>
-    /// Interaktionslogik für TicketPage.xaml
+    /// Interaktionslogik für Umsatzansicht.xaml
     /// </summary>
-    public partial class TicketPage : UserControl
+    public partial class Umsatzansicht : Page
     {
-        public TicketPage()
+        public Umsatzansicht()
         {
             InitializeComponent();
         }
+
+        private void ticketClick(object sender, RoutedEventArgs e)
+        {
+            salesPage.Content = new TicketUbersicht();
+        }
+
+        private void umsatzClick(object sender, RoutedEventArgs e)
+        {
+            salesPage.Content = new Umsatzansicht();
+        }
+
     }
 }

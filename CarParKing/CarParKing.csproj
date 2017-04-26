@@ -94,13 +94,13 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
+    <Compile Include="TicketUbersicht.xaml.cs">
+      <DependentUpon>TicketUbersicht.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Umsatzansicht.xaml.cs">
+      <DependentUpon>Umsatzansicht.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainView.cs" />
-    <Compile Include="TicketWindow.xaml.cs">
-      <DependentUpon>TicketWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\TicketPage.xaml.cs">
-      <DependentUpon>TicketPage.xaml</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -113,11 +113,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="TicketWindow.xaml">
+    <Page Include="TicketUbersicht.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\TicketPage.xaml">
+    <Page Include="Umsatzansicht.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -198,6 +198,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\CarParKingService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Image\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

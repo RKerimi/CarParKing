@@ -1,39 +1,67 @@
 ﻿<Window x:Class="CarParKing.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Name="Main"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarParKing"
         mc:Ignorable="d"
-        Title="MainWindowDashboard" Height="350" Width="525">
+        Title="CarParking Übersicht" 
+        Height="350" 
+        Width="525"
+        Background="LightGray">
 
+    <Window.Resources>
 
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="BlueViolet"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
 
-    <Grid>
+    <Grid  >
+    
         <!-- Grid Definition-->
-         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="28" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="30.4" />
+            <RowDefinition />
+            <RowDefinition Height="20" />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="200" />
-        </Grid.ColumnDefinitions>
 
-            <!-- Menu Bar -->
-        <Menu Grid.Row="2" IsMainMenu="True">
-            <MenuItem Header="_View" />
-            <MenuItem Header="_Edit" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="391*"/>
+        </Grid.ColumnDefinitions>
+        
+
+        <!-- Menu Bar -->
+        <Menu Grid.Row="0" Grid.ColumnSpan="2" IsMainMenu="True" Margin="0,0,0.4,12.4">
+            <MenuItem Click="ticketClick" Header="_View" />
+            <MenuItem Click="umsatzClick" Header="_Umsatz" />
             <MenuItem Header="_Window" />
             <MenuItem Header="_Help" />
         </Menu>
 
+        <Image  Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" 
+                Source="http://www.clipartkid.com/images/675/clipart-car-icon-uPdqE8-clipart.png" 
+                Margin="20,14.6,20,0" RenderTransformOrigin="0.86,0.5" Height="50"/>
 
-        <NavigationWindow Grid.Row="1" Grid.Column="0"></NavigationWindow>
+        <TextBlock Grid.Column="1"  Grid.Row="1" Text="Momentane Auslastung"/>
 
 
+        <Image x:Name="CarIcon" HorizontalAlignment="Center" 
+                   VerticalAlignment="Center"  
+                   Width="190" Height="130" Margin="0,50,20,0" Grid.Column="1" Grid.Row="1"
+                   Source="http://www.computerwissen.de/fileadmin/_migrated/RTE/RTEmagicC_20120831-1.jpg.jpg" />
+
+        <ComboBox  Grid.Row="1" Grid.Column="1" Width="180" HorizontalAlignment="Right" Margin="0,49.6,10.4,187.8" >
+            <ComboBoxItem IsSelected="True" Content="Wählen Sie einen Parkplatz"/>
+            <ComboBoxItem  Content="FH Salzburg"/>
+            <ComboBoxItem Content="Landeskrankenhaus"/>
+        </ComboBox>
+           
 
 
     </Grid>
