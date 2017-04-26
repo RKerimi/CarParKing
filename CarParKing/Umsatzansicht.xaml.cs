@@ -34,6 +34,8 @@ namespace CarParKing
         {
             salesPage.Content = new Umsatzansicht();
         }
+   
+
 
     }
 }
