@@ -22,3 +22,38 @@ C:\Users\Refik Kerimi\documents\visual studio 2017\Projects\CarParKing\CarParKin
 C:\Users\Refik Kerimi\documents\visual studio 2017\Projects\CarParKing\CarParKing\obj\Debug\TicketUbersicht.baml
 C:\Users\Refik Kerimi\documents\visual studio 2017\Projects\CarParKing\CarParKing\obj\Debug\Umsatzansicht.g.cs
 C:\Users\Refik Kerimi\documents\visual studio 2017\Projects\CarParKing\CarParKing\obj\Debug\Umsatzansicht.baml
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\bin\Debug\CarParKing.exe.config
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\bin\Debug\CarParKing.exe
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\bin\Debug\CarParKing.pdb
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\bin\Debug\EntityFramework.dll
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\bin\Debug\EntityFramework.xml
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\bin\Debug\de\EntityFramework.resources.dll
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\CarParKing.csprojResolveAssemblyReference.cache
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\MainWindow.g.cs
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\App.g.cs
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\CarParKing_Content.g.cs
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\CarParKing_MarkupCompile.cache
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\CarParKing_MarkupCompile.lref
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\MainWindow.baml
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\CarParKing.g.resources
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\CarParKing.Properties.Resources.resources
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\CarParKing.csproj.GenerateResource.Cache
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\CarParKing.exe
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\CarParKing.pdb
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\bin\Debug\MaterialDesignColors.dll
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\bin\Debug\MaterialDesignColors.pdb
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\bin\Debug\de\EntityFramework.SqlServer.resources.dll
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\App.baml
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\TicketList.g.cs
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\ParkingList.g.cs
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\TicketList.baml
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\ParkingList.baml
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\EditTicket.g.cs
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\EditTicket.baml
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\newParking.g.cs
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\newParking.baml

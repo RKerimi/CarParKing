@@ -1,0 +1,54 @@
+﻿<Page x:Class="CarParKing.ParkingList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesignColors="clr-namespace:MaterialDesignColors;assembly=MaterialDesignColors"
+        xmlns:local="clr-namespace:CarParKing"
+        mc:Ignorable="d" 
+        d:DesignHeight="520" Width="720"
+        Title="Parkplatzübersicht"      
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}">
+
+
+        <Grid>
+            <!-- Grid Definition-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+
+            </Grid.ColumnDefinitions>
+            <!--Side Nav Grid definition -->
+            <StackPanel Grid.Column="0" Grid.Row="1">
+
+                <Button Grid.Column="0" Grid.Row="0" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Alle</Button>
+                <Button Grid.Column="0" Grid.Row="1" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Aktive</Button>
+                <Button Grid.Column="0" Grid.Row="2" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Inaktive</Button>
+                <Button Grid.Column="0" Grid.Row="3" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Bearbeiten</Button>
+                <Button Click="goToEdit"  Grid.Column="0" Grid.Row="4" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Neu</Button>
+                <Button Grid.Column="0" Grid.Row="5" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Löschen</Button>
+            </StackPanel>
+
+
+
+            <StackPanel Grid.Column="1"  Grid.Row="1" Margin="99,0,-99,10"  >
+                <DataGrid x:Name="DataGrid1" HorizontalAlignment="Left" VerticalAlignment="Top"  AutoGenerateColumns="True"
+                  SelectedItem="{Binding SelectedTicket}" ItemsSource="{Binding Tickets, Mode=OneWay}" Margin="0,10,0,0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn  Header="Parkplatzname"/>
+                        <DataGridTextColumn Header="Anzahl Parkplätze"/>
+                        <DataGridTextColumn  Header="Kosten/h"/>
+                        <DataGridTextColumn  Header="Tageshöchstsätze"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+            <Border BorderBrush="Black" BorderThickness="1" Margin="99,10,-97,29" Grid.Row="1" Grid.Column="1"/>
+        </Grid>
+</Page>

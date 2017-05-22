@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    "\\CarParKing\\bin"
+    "",
+    "\\CarParKing"
   ],
+  "SelectedNode": "\\CarParKing\\MainWindow.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

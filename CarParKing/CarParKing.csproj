@@ -40,6 +40,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.3.0.823, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.3.0.823\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -84,7 +90,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Data.edmx</DependentUpon>
     </Compile>
+    <Compile Include="EditTicket.xaml.cs">
+      <DependentUpon>EditTicket.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ModelView\MainModelView.cs" />
+    <Compile Include="newParking.xaml.cs">
+      <DependentUpon>newParking.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Parkplatzdetails.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
@@ -94,13 +106,17 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
-    <Compile Include="TicketUbersicht.xaml.cs">
-      <DependentUpon>TicketUbersicht.xaml</DependentUpon>
+    <Compile Include="TicketList.xaml.cs">
+      <DependentUpon>TicketList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Umsatzansicht.xaml.cs">
-      <DependentUpon>Umsatzansicht.xaml</DependentUpon>
+    <Compile Include="ParkingList.xaml.cs">
+      <DependentUpon>ParkingList.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainView.cs" />
+    <Page Include="EditTicket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -113,11 +129,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="TicketUbersicht.xaml">
+    <Page Include="newParking.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Umsatzansicht.xaml">
+    <Page Include="TicketList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ParkingList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -176,6 +196,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Image\Logo.PNG" />
     <None Include="Connected Services\CarParKingService\configuration91.svcinfo" />
     <None Include="Connected Services\CarParKingService\configuration.svcinfo" />
     <None Include="Connected Services\CarParKingService\Reference.svcmap">
@@ -199,8 +220,6 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\CarParKingService\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Image\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

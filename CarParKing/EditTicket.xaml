@@ -1,0 +1,60 @@
+﻿<Page x:Class="CarParKing.EditTicket"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesignColors="clr-namespace:MaterialDesignColors;assembly=MaterialDesignColors"
+        xmlns:local="clr-namespace:CarParKing"
+      mc:Ignorable="d" 
+      Title="EditTicket"
+       Height="520" Width="720"
+>
+
+    <Grid>
+        <materialDesign:Card Padding="32" Height="248" Width="Auto" Margin="77,25,109,0" >
+            <!-- Grid Forms -->
+            <Grid Grid.Column="0" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"  />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+
+                <!-- Forms-->
+
+                <StackPanel Grid.Column="1" >
+                    <Border Margin="0 0 0 5" BorderBrush="Black" BorderThickness="1">
+                        <TextBox  Width="150"/>
+                    </Border>
+                    <Border  Margin="0 0 0 5"  BorderBrush="Black" BorderThickness="1">
+                        <TextBox  Width="150" Text="{Binding EntryTime}"  />
+                    </Border>
+                    <Border  Margin="0 0 0 5" BorderBrush="Black" BorderThickness="1">
+                        <TextBox  Width="150" Text="{Binding ExitTime}"   />
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="1">
+                        <TextBox  Width="150" Text="{Binding TicketPrice}"/>
+                    </Border>
+                </StackPanel>
+
+                <!-- Label Forms-->
+                <StackPanel>
+                    <Label  Margin="0 0 0 5"  Content="TicketNr.: " RenderTransformOrigin="0.5,0.50"/>
+                    <Label FlowDirection="LeftToRight"  Margin="0 0 0 5" Grid.Row="2" Grid.Column="0" Content="Einfahrtszeit: "/>
+                    <Label  Margin="0 0 0 5" Grid.Row="2" Grid.Column="0" Content="Ausfahrtszeit: "/>
+                    <Label   Margin="0 0 0 5" Grid.Row="3" Grid.Column="0" Content="Betrag: "/>
+
+                </StackPanel>
+                <Button  Grid.ColumnSpan="2" Height="Auto"  FontFamily="3" Margin="90,15,100,-39" Grid.Row="3" >Speichern</Button>
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</Page>
