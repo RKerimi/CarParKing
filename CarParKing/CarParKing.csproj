@@ -70,7 +70,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Connected Services\CarParKingService\Reference.cs">
+    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -93,7 +93,9 @@
     <Compile Include="EditTicket.xaml.cs">
       <DependentUpon>EditTicket.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ModelView\MainModelView.cs" />
+    <Compile Include="ModelView\TicketList.cs" />
+    <Compile Include="Model\ParkingPlaceData.cs" />
+    <Compile Include="Model\TicketData.cs" />
     <Compile Include="newParking.xaml.cs">
       <DependentUpon>newParking.xaml</DependentUpon>
     </Compile>
@@ -103,6 +105,7 @@
     <Compile Include="Parkplatzübersicht.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
+    <Compile Include="Service\Webservice.cs" />
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
@@ -112,7 +115,6 @@
     <Compile Include="ParkingList.xaml.cs">
       <DependentUpon>ParkingList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MainView.cs" />
     <Page Include="EditTicket.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -143,7 +145,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\MainModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -165,17 +166,41 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Data.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Connected Services\CarParKingService\CarParKing.CarParKingService.getPersonListResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\CarParKing.ServiceReference1.createParkingPlaceResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\CarParKingService\CarParKing.CarParKingService.person.datasource">
+    <None Include="Connected Services\ServiceReference1\CarParKing.ServiceReference1.createTicketResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\CarParKingService\CarParKing.CarParKingService.savePersonResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\CarParKing.ServiceReference1.editParkingPlaceResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\CarParKingService\NewWebService.wsdl" />
-    <None Include="Connected Services\CarParKingService\NewWebService.xsd">
+    <None Include="Connected Services\ServiceReference1\CarParKing.ServiceReference1.editTicketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\CarParKing.ServiceReference1.getActiveTicketListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\CarParKing.ServiceReference1.getInactiveTicketListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\CarParKing.ServiceReference1.getParkingPlaceByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\CarParKing.ServiceReference1.getParkingPlaceListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\CarParKing.ServiceReference1.getTicketListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\CarParKing.ServiceReference1.parkingPlace.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\CarParKing.ServiceReference1.ticket.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\CarParkParking.wsdl" />
+    <None Include="Connected Services\ServiceReference1\CarParkParking.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Data.edmx.diagram">
@@ -197,9 +222,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Logo.PNG" />
-    <None Include="Connected Services\CarParKingService\configuration91.svcinfo" />
-    <None Include="Connected Services\CarParKingService\configuration.svcinfo" />
-    <None Include="Connected Services\CarParKingService\Reference.svcmap">
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -218,8 +243,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\CarParKingService\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="View\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

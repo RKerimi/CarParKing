@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://service/" targetNamespace="http://service/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="createParkingPlace" type="tns:createParkingPlace" />
+  <xs:element name="createParkingPlaceResponse" type="tns:createParkingPlaceResponse" />
+  <xs:element name="createTicket" type="tns:createTicket" />
+  <xs:element name="createTicketResponse" type="tns:createTicketResponse" />
+  <xs:element name="editParkingPlace" type="tns:editParkingPlace" />
+  <xs:element name="editParkingPlaceResponse" type="tns:editParkingPlaceResponse" />
+  <xs:element name="editTicket" type="tns:editTicket" />
+  <xs:element name="editTicketResponse" type="tns:editTicketResponse" />
+  <xs:element name="getActiveTicketList" type="tns:getActiveTicketList" />
+  <xs:element name="getActiveTicketListResponse" type="tns:getActiveTicketListResponse" />
+  <xs:element name="getInactiveTicketList" type="tns:getInactiveTicketList" />
+  <xs:element name="getInactiveTicketListResponse" type="tns:getInactiveTicketListResponse" />
+  <xs:element name="getParkingPlaceById" type="tns:getParkingPlaceById" />
+  <xs:element name="getParkingPlaceByIdResponse" type="tns:getParkingPlaceByIdResponse" />
+  <xs:element name="getParkingPlaceList" type="tns:getParkingPlaceList" />
+  <xs:element name="getParkingPlaceListResponse" type="tns:getParkingPlaceListResponse" />
+  <xs:element name="getTicketList" type="tns:getTicketList" />
+  <xs:element name="getTicketListResponse" type="tns:getTicketListResponse" />
+  <xs:complexType name="getTicketList">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+      <xs:element name="arg1" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTicketListResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:ticket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ticket">
+    <xs:sequence>
+      <xs:element name="deleted" type="xs:int" />
+      <xs:element minOccurs="0" name="entrytime" type="xs:string" />
+      <xs:element minOccurs="0" name="exittime" type="xs:string" />
+      <xs:element name="paid" type="xs:int" />
+      <xs:element name="price" type="xs:double" />
+      <xs:element name="ticketnumber" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getParkingPlaceById">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getParkingPlaceByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:parkingPlace" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="parkingPlace">
+    <xs:sequence>
+      <xs:element name="deleted" type="xs:int" />
+      <xs:element name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element name="numberOfParkingSlots" type="xs:int" />
+      <xs:element name="pricePerHour" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getInactiveTicketList">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getInactiveTicketListResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:ticket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createParkingPlace">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:parkingPlace" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createParkingPlaceResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getActiveTicketList">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getActiveTicketListResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:ticket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getParkingPlaceList">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getParkingPlaceListResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:parkingPlace" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editParkingPlace">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:parkingPlace" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editParkingPlaceResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createTicket">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+      <xs:element minOccurs="0" name="arg1" type="tns:ticket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createTicketResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editTicket">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+      <xs:element minOccurs="0" name="arg1" type="tns:ticket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editTicketResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

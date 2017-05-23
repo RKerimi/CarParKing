@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://service/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="CarParkParking" targetNamespace="http://service/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://notebook36:8082/Parkingplace-war/CarParkParking?xsd=1" namespace="http://service/" />
+    </xsd:schema>
+  </types>
+  <message name="editParkingPlace">
+    <part name="parameters" element="tns:editParkingPlace" />
+  </message>
+  <message name="editParkingPlaceResponse">
+    <part name="parameters" element="tns:editParkingPlaceResponse" />
+  </message>
+  <message name="getTicketList">
+    <part name="parameters" element="tns:getTicketList" />
+  </message>
+  <message name="getTicketListResponse">
+    <part name="parameters" element="tns:getTicketListResponse" />
+  </message>
+  <message name="editTicket">
+    <part name="parameters" element="tns:editTicket" />
+  </message>
+  <message name="editTicketResponse">
+    <part name="parameters" element="tns:editTicketResponse" />
+  </message>
+  <message name="createTicket">
+    <part name="parameters" element="tns:createTicket" />
+  </message>
+  <message name="createTicketResponse">
+    <part name="parameters" element="tns:createTicketResponse" />
+  </message>
+  <message name="getActiveTicketList">
+    <part name="parameters" element="tns:getActiveTicketList" />
+  </message>
+  <message name="getActiveTicketListResponse">
+    <part name="parameters" element="tns:getActiveTicketListResponse" />
+  </message>
+  <message name="getParkingPlaceById">
+    <part name="parameters" element="tns:getParkingPlaceById" />
+  </message>
+  <message name="getParkingPlaceByIdResponse">
+    <part name="parameters" element="tns:getParkingPlaceByIdResponse" />
+  </message>
+  <message name="getParkingPlaceList">
+    <part name="parameters" element="tns:getParkingPlaceList" />
+  </message>
+  <message name="getParkingPlaceListResponse">
+    <part name="parameters" element="tns:getParkingPlaceListResponse" />
+  </message>
+  <message name="createParkingPlace">
+    <part name="parameters" element="tns:createParkingPlace" />
+  </message>
+  <message name="createParkingPlaceResponse">
+    <part name="parameters" element="tns:createParkingPlaceResponse" />
+  </message>
+  <message name="getInactiveTicketList">
+    <part name="parameters" element="tns:getInactiveTicketList" />
+  </message>
+  <message name="getInactiveTicketListResponse">
+    <part name="parameters" element="tns:getInactiveTicketListResponse" />
+  </message>
+  <portType name="Parking">
+    <operation name="editParkingPlace">
+      <input wsam:Action="http://service/Parking/editParkingPlaceRequest" message="tns:editParkingPlace" />
+      <output wsam:Action="http://service/Parking/editParkingPlaceResponse" message="tns:editParkingPlaceResponse" />
+    </operation>
+    <operation name="getTicketList">
+      <input wsam:Action="http://service/Parking/getTicketListRequest" message="tns:getTicketList" />
+      <output wsam:Action="http://service/Parking/getTicketListResponse" message="tns:getTicketListResponse" />
+    </operation>
+    <operation name="editTicket">
+      <input wsam:Action="http://service/Parking/editTicketRequest" message="tns:editTicket" />
+      <output wsam:Action="http://service/Parking/editTicketResponse" message="tns:editTicketResponse" />
+    </operation>
+    <operation name="createTicket">
+      <input wsam:Action="http://service/Parking/createTicketRequest" message="tns:createTicket" />
+      <output wsam:Action="http://service/Parking/createTicketResponse" message="tns:createTicketResponse" />
+    </operation>
+    <operation name="getActiveTicketList">
+      <input wsam:Action="http://service/Parking/getActiveTicketListRequest" message="tns:getActiveTicketList" />
+      <output wsam:Action="http://service/Parking/getActiveTicketListResponse" message="tns:getActiveTicketListResponse" />
+    </operation>
+    <operation name="getParkingPlaceById">
+      <input wsam:Action="http://service/Parking/getParkingPlaceByIdRequest" message="tns:getParkingPlaceById" />
+      <output wsam:Action="http://service/Parking/getParkingPlaceByIdResponse" message="tns:getParkingPlaceByIdResponse" />
+    </operation>
+    <operation name="getParkingPlaceList">
+      <input wsam:Action="http://service/Parking/getParkingPlaceListRequest" message="tns:getParkingPlaceList" />
+      <output wsam:Action="http://service/Parking/getParkingPlaceListResponse" message="tns:getParkingPlaceListResponse" />
+    </operation>
+    <operation name="createParkingPlace">
+      <input wsam:Action="http://service/Parking/createParkingPlaceRequest" message="tns:createParkingPlace" />
+      <output wsam:Action="http://service/Parking/createParkingPlaceResponse" message="tns:createParkingPlaceResponse" />
+    </operation>
+    <operation name="getInactiveTicketList">
+      <input wsam:Action="http://service/Parking/getInactiveTicketListRequest" message="tns:getInactiveTicketList" />
+      <output wsam:Action="http://service/Parking/getInactiveTicketListResponse" message="tns:getInactiveTicketListResponse" />
+    </operation>
+  </portType>
+  <binding name="ParkingPortBinding" type="tns:Parking">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="editParkingPlace">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getTicketList">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="editTicket">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="createTicket">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getActiveTicketList">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getParkingPlaceById">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getParkingPlaceList">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="createParkingPlace">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getInactiveTicketList">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="CarParkParking">
+    <port name="ParkingPort" binding="tns:ParkingPortBinding">
+      <soap:address location="http://notebook36:8082/Parkingplace-war/CarParkParking" />
+    </port>
+  </service>
+</definitions>

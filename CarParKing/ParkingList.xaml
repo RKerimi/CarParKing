@@ -13,7 +13,7 @@
         TextElement.Foreground="{DynamicResource MaterialDesignBody}">
 
 
-        <Grid>
+    <Grid DataContext="{Binding Source={StaticResource ticketlist}}">
             <!-- Grid Definition-->
             <Grid.RowDefinitions>
                 <RowDefinition Height="50" />
@@ -28,7 +28,7 @@
             <!--Side Nav Grid definition -->
             <StackPanel Grid.Column="0" Grid.Row="1">
 
-                <Button Grid.Column="0" Grid.Row="0" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Alle</Button>
+                <Button Grid.Column="0" Grid.Row="0" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8" Click="allParkingPlace">Alle</Button>
                 <Button Grid.Column="0" Grid.Row="1" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Aktive</Button>
                 <Button Grid.Column="0" Grid.Row="2" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Inaktive</Button>
                 <Button Grid.Column="0" Grid.Row="3" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Bearbeiten</Button>
@@ -40,13 +40,13 @@
 
             <StackPanel Grid.Column="1"  Grid.Row="1" Margin="99,0,-99,10"  >
                 <DataGrid x:Name="DataGrid1" HorizontalAlignment="Left" VerticalAlignment="Top"  AutoGenerateColumns="True"
-                  SelectedItem="{Binding SelectedTicket}" ItemsSource="{Binding Tickets, Mode=OneWay}" Margin="0,10,0,0">
+                  SelectedItem="{Binding SelectedParkingPlace}" ItemsSource="{Binding ParkingPlace, Mode=OneWay}" Margin="0,10,0,0">
                     <DataGrid.Columns>
-                        <DataGridTextColumn  Header="Parkplatzname"/>
-                        <DataGridTextColumn Header="Anzahl Parkplätze"/>
-                        <DataGridTextColumn  Header="Kosten/h"/>
-                        <DataGridTextColumn  Header="Tageshöchstsätze"/>
-                    </DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding id, Mode=OneWay}" Header="id"/>
+                    <DataGridTextColumn Binding="{Binding Name, Mode=OneWay}" Header="Parkplatzname"/>
+                    <DataGridTextColumn Binding="{Binding numberOfParkingSlots, Mode=OneWay}" Header="Anzahl Parkplätze"/>
+                    <DataGridTextColumn Binding="{Binding pricePerHour, Mode=OneWay}" Header="Kosten/h"/>
+                </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
             <Border BorderBrush="Black" BorderThickness="1" Margin="99,10,-97,29" Grid.Row="1" Grid.Column="1"/>

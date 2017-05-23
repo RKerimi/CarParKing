@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CarParKing.ModelView;
 
 namespace CarParKing
 {
@@ -20,6 +21,10 @@ namespace CarParKing
     /// </summary>
     public partial class ParkingList : Page
     {
+        //https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references
+        private TicketList tmp = (TicketList)Application.Current.Resources["ticketlist"];
+
+
         public ParkingList()
         {
             InitializeComponent();
@@ -31,17 +36,9 @@ namespace CarParKing
             this.NavigationService.Navigate(new newParking());
         }
 
-        /*private void ticketClick(object sender, RoutedEventArgs e)
+        private void allParkingPlace(object sender, RoutedEventArgs e)
         {
-            salesPage.Content = new TicketUbersicht();
+            
         }
-
-        private void umsatzClick(object sender, RoutedEventArgs e)
-        {
-            salesPage.Content = new Umsatzansicht();
-        }*/
-
-
-
     }
 }
