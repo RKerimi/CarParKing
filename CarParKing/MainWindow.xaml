@@ -6,7 +6,6 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:materialDesignColors="clr-namespace:MaterialDesignColors;assembly=MaterialDesignColors"
         xmlns:local="clr-namespace:CarParKing"
-        xmlns:vm="clr-namespace:CarParKing.ModelView"
         mc:Ignorable="d"
         Title="CarParking Übersicht" 
         Height="520" 
@@ -14,7 +13,7 @@
    >
 
     <Window.Resources>
-        <vm:TicketList x:Key="ticketlist"/>
+        
     </Window.Resources>
 
     <Grid>

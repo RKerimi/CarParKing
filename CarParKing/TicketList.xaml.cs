@@ -29,6 +29,11 @@ namespace CarParKing
             InitializeComponent();
         }
 
+        internal void getAllParkingPlacesFromWebservice()
+        {
+            throw new NotImplementedException();
+        }
+
 
         /*private void GetAllTicket(object sender, RoutedEventArgs e)
         {

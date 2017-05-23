@@ -93,7 +93,7 @@
     <Compile Include="EditTicket.xaml.cs">
       <DependentUpon>EditTicket.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ModelView\TicketList.cs" />
+    <Compile Include="ModelView\CarParkViewModel.cs" />
     <Compile Include="Model\ParkingPlaceData.cs" />
     <Compile Include="Model\TicketData.cs" />
     <Compile Include="newParking.xaml.cs">

@@ -22,7 +22,7 @@ namespace CarParKing
     public partial class ParkingList : Page
     {
         //https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references
-        private TicketList tmp = (TicketList)Application.Current.Resources["ticketlist"];
+        private CarParkViewModel tmp = (CarParkViewModel)App.Current.Resources["carParkViewModel"];
 
 
         public ParkingList()
@@ -38,7 +38,7 @@ namespace CarParKing
 
         private void allParkingPlace(object sender, RoutedEventArgs e)
         {
-            
+            tmp.getAllParkingPlacesFromWebservice();
         }
     }
 }

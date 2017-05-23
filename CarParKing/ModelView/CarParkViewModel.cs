@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CarParKing.ModelView
 {
-    class TicketList : INotifyPropertyChanged
+    class CarParkViewModel : INotifyPropertyChanged
     {
         public ObservableCollection<ParkingPlaceData> ParkingPlace { get; set; }
         public ObservableCollection<TicketData> Tickets { get; set; }
@@ -19,7 +19,7 @@ namespace CarParKing.ModelView
         private ParkingPlaceData _ParkingPlaceToEdit = new ParkingPlaceData();
 
 
-        public TicketList()
+        public CarParkViewModel()
         {
             ParkingPlace = new ObservableCollection<ParkingPlaceData>();
             Tickets = new ObservableCollection<TicketData>();

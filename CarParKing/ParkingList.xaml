@@ -13,7 +13,7 @@
         TextElement.Foreground="{DynamicResource MaterialDesignBody}">
 
 
-    <Grid DataContext="{Binding Source={StaticResource ticketlist}}">
+    <Grid DataContext="{Binding Source={StaticResource carParkViewModel}}">
             <!-- Grid Definition-->
             <Grid.RowDefinitions>
                 <RowDefinition Height="50" />
@@ -36,19 +36,15 @@
                 <Button Grid.Column="0" Grid.Row="5" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Löschen</Button>
             </StackPanel>
 
-
-
-            <StackPanel Grid.Column="1"  Grid.Row="1" Margin="99,0,-99,10"  >
-                <DataGrid x:Name="DataGrid1" HorizontalAlignment="Left" VerticalAlignment="Top"  AutoGenerateColumns="True"
+        <DataGrid x:Name="DataGrid1" HorizontalAlignment="Left" VerticalAlignment="Top"  AutoGenerateColumns="False" Grid.Row="1" Grid.Column="1"
                   SelectedItem="{Binding SelectedParkingPlace}" ItemsSource="{Binding ParkingPlace, Mode=OneWay}" Margin="0,10,0,0">
-                    <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding id, Mode=OneWay}" Header="id"/>
-                    <DataGridTextColumn Binding="{Binding Name, Mode=OneWay}" Header="Parkplatzname"/>
-                    <DataGridTextColumn Binding="{Binding numberOfParkingSlots, Mode=OneWay}" Header="Anzahl Parkplätze"/>
-                    <DataGridTextColumn Binding="{Binding pricePerHour, Mode=OneWay}" Header="Kosten/h"/>
-                </DataGrid.Columns>
-                </DataGrid>
-            </StackPanel>
-            <Border BorderBrush="Black" BorderThickness="1" Margin="99,10,-97,29" Grid.Row="1" Grid.Column="1"/>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding id, Mode=OneWay}" Header="id"/>
+                <DataGridTextColumn Binding="{Binding Name, Mode=OneWay}" Header="Parkplatzname"/>
+                <DataGridTextColumn Binding="{Binding numberOfParkingSlots, Mode=OneWay}" Header="Anzahl Parkplätze"/>
+                <DataGridTextColumn Binding="{Binding pricePerHour, Mode=OneWay}" Header="Kosten/h"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="99,10,-97,29" Grid.Row="1" Grid.Column="1"/>
         </Grid>
 </Page>
