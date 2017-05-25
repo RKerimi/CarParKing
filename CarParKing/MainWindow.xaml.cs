@@ -24,6 +24,7 @@ namespace CarParKing
     /// </summary>
     public partial class MainWindow : Window
     {
+        private CarParkViewModel tmp = (CarParkViewModel)App.Current.Resources["carParkViewModel"];
         public MainWindow()
         {
             InitializeComponent();
@@ -42,6 +43,21 @@ namespace CarParKing
         private void MainFrame_Navigated(object sender, NavigationEventArgs e)
         {
 
+        }
+
+        private void loadParkingPlaces(object sender, RoutedEventArgs e)
+        {
+            tmp.getAllParkingPlacesFromWebservice();
+        }
+
+        private void ComboBox_DropDownOpened(object sender, EventArgs e)
+        {
+            tmp.ParkingPlaceDropDown = true;
+        }
+
+        private void ComboBox_DropDownClosed(object sender, EventArgs e)
+        {
+            tmp.ParkingPlaceDropDown = false;
         }
 
 

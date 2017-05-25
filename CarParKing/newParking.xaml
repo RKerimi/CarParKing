@@ -31,17 +31,15 @@
 
                 <StackPanel Grid.Column="1" >
                     <Border Margin="0 0 0 5" BorderBrush="Black" BorderThickness="1">
-                        <TextBox Width="150" Text="{Binding prakingID}"/>
+                        <TextBox Width="150" Text="{Binding SelectedParkingPlace.Name, Source={StaticResource carParkViewModel}}" />
                     </Border>
                     <Border  Margin="0 0 0 5"  BorderBrush="Black" BorderThickness="1">
-                        <TextBox  Width="150" Text="{Binding parkingNumber}"  />
+                        <TextBox  Width="150" Text="{Binding SelectedParkingPlace.numberOfParkingSlots, Source={StaticResource carParkViewModel}}" />
                     </Border>
                     <Border  Margin="0 0 0 5" BorderBrush="Black" BorderThickness="1">
-                        <TextBox  Width="150" Text="{Binding parkingCost}"   />
+                        <TextBox  Width="150" Text="{Binding SelectedParkingPlace.pricePerHour, Source={StaticResource carParkViewModel}}" />
                     </Border>
-                    <Border BorderBrush="Black" BorderThickness="1">
-                        <TextBox  Width="150" Text="{Binding parkinDayCosts}"/>
-                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="1"/>
                 </StackPanel>
 
                 <!-- Label Forms-->
@@ -49,9 +47,9 @@
                     <Label  Margin="0 0 0 5" Content="Parkplatzname: "/>
                     <Label  Margin="0 0 0 5" Content="Anzahl Parkplätze: "/>
                     <Label  Margin="0 0 0 5" Content="Kosten/h: "/>
-                    <Label  Margin="0 0 0 5" Content="Tageshöchstsätze: "/>
                 </StackPanel>
-                <Button  Grid.ColumnSpan="2" Height="Auto"  FontFamily="3" Margin="90,15,100,-39" Grid.Row="3" >Speichern</Button>
+                <Button  Grid.ColumnSpan="2" Height="Auto"  FontFamily="3" Margin="90,15,100,-39" Grid.Row="3" Click="Save" >Speichern</Button>
+                <Button Height="Auto"  FontFamily="3" Margin="63,15,-5,-39" Grid.Row="3" Content="Abbrechen" Grid.Column="1" Click="cancel" />
             </Grid>
         </materialDesign:Card>
     </Grid>

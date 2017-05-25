@@ -92,3 +92,4 @@ C:\Users\mhaas\Source\Repos\CarParKing\CarParKing\obj\Debug\CarParKing.Propertie
 C:\Users\mhaas\Source\Repos\CarParKing\CarParKing\obj\Debug\CarParKing.csproj.GenerateResource.Cache
 C:\Users\mhaas\Source\Repos\CarParKing\CarParKing\obj\Debug\CarParKing.exe
 C:\Users\mhaas\Source\Repos\CarParKing\CarParKing\obj\Debug\CarParKing.pdb
+C:\Users\mhaas\Source\Repos\CarParKing\CarParKing\obj\Debug\CarParKing.csprojResolveAssemblyReference.cache

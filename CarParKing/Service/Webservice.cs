@@ -39,7 +39,7 @@ namespace CarParKing.Service
         public int createParkingPlace(ParkingPlaceData toCreate)
         {
             var client = new ServiceReference1.ParkingClient();
-            int tmp = client.editParkingPlace(ParkingPlaceToWebservice(toCreate));
+            int tmp = client.createParkingPlace(ParkingPlaceToWebservice(toCreate));
             client.Close();
             return tmp;
         }

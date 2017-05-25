@@ -30,15 +30,41 @@ namespace CarParKing
             InitializeComponent();
         }
 
-
-        private void goToEdit(object sender, RoutedEventArgs e)
+        private void createNew(object sender, RoutedEventArgs e)
         {
+            tmp.toEdit = false;
+            tmp.SelectedParkingPlace = null;
             this.NavigationService.Navigate(new newParking());
         }
 
-        private void allParkingPlace(object sender, RoutedEventArgs e)
+        private void edit(object sender, RoutedEventArgs e)
+        {
+            tmp.toEdit = true;
+            if (tmp.SelectedParkingPlace.Name != null)
+            {
+                this.NavigationService.Navigate(new newParking());
+            }
+        }
+
+        private void PageLoaded(object sender, RoutedEventArgs e)
         {
             tmp.getAllParkingPlacesFromWebservice();
+        }
+
+
+
+        private void delete(object sender, RoutedEventArgs e)
+        {
+            int result = tmp.deleteParkingPlace();
+            if (result == 0)
+            {
+                MessageBox.Show("deleted");
+                this.NavigationService.Navigate(new ParkingList());
+            }
+            else
+            {
+                MessageBox.Show("deleting failed");
+            }
         }
     }
 }

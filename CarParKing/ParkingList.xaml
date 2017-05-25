@@ -10,7 +10,7 @@
         d:DesignHeight="520" Width="720"
         Title="Parkplatzübersicht"      
         Background="{DynamicResource MaterialDesignPaper}"
-        TextElement.Foreground="{DynamicResource MaterialDesignBody}">
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}" Loaded="PageLoaded">
 
 
     <Grid DataContext="{Binding Source={StaticResource carParkViewModel}}">
@@ -27,13 +27,9 @@
             </Grid.ColumnDefinitions>
             <!--Side Nav Grid definition -->
             <StackPanel Grid.Column="0" Grid.Row="1">
-
-                <Button Grid.Column="0" Grid.Row="0" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8" Click="allParkingPlace">Alle</Button>
-                <Button Grid.Column="0" Grid.Row="1" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Aktive</Button>
-                <Button Grid.Column="0" Grid.Row="2" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Inaktive</Button>
-                <Button Grid.Column="0" Grid.Row="3" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Bearbeiten</Button>
-                <Button Click="goToEdit"  Grid.Column="0" Grid.Row="4" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Neu</Button>
-                <Button Grid.Column="0" Grid.Row="5" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Löschen</Button>
+            <Button Grid.Column="0" Grid.Row="3" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8" Click="edit">Bearbeiten</Button>
+                <Button Click="createNew"  Grid.Column="0" Grid.Row="4" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Neu</Button>
+                <Button Grid.Column="0" Grid.Row="5" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8" Click="delete">Löschen</Button>
             </StackPanel>
 
         <DataGrid x:Name="DataGrid1" HorizontalAlignment="Left" VerticalAlignment="Top"  AutoGenerateColumns="False" Grid.Row="1" Grid.Column="1"

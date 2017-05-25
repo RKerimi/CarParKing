@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\CarParKing"
+    "\\CarParKing",
+    "\\CarParKing\\Properties",
+    "\\CarParKing\\Service"
   ],
-  "SelectedNode": "\\CarParKing\\Data.Context.tt",
   "PreviewInSolutionExplorer": false
 }

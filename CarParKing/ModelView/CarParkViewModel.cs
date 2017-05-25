@@ -14,10 +14,12 @@ namespace CarParKing.ModelView
     {
         public ObservableCollection<ParkingPlaceData> ParkingPlace { get; set; }
         public ObservableCollection<TicketData> Tickets { get; set; }
+        public bool toEdit { get; set; }
+        public bool ParkingPlaceDropDown { get; set; }
         private ParkingPlaceData _SelectedParkingPlace = new ParkingPlaceData();
         private TicketData _SelectedTicket = new TicketData();
-        private ParkingPlaceData _ParkingPlaceToEdit = new ParkingPlaceData();
-
+        private ParkingPlaceData _ParkingPlaceToCreate = new ParkingPlaceData();
+        private ParkingPlaceData _ParkingPlaceForTicketSelect = new ParkingPlaceData();
 
         public CarParkViewModel()
         {
@@ -47,6 +49,35 @@ namespace CarParKing.ModelView
         }
 
         //get which parking place is selected
+        public ParkingPlaceData ParkingPlaceForTicketSelect
+        {
+            get
+            {
+                return _ParkingPlaceForTicketSelect;
+            }
+            set
+            {
+                OnPropertyChanged("ParkingPlaceForTicketSelect");
+                if(ParkingPlaceDropDown == true)
+                {
+                    _ParkingPlaceForTicketSelect = value;
+                    if (_ParkingPlaceForTicketSelect == null)
+                    {
+                        _ParkingPlaceForTicketSelect = new ParkingPlaceData();
+                    }
+                    Console.WriteLine("true");
+                }
+                else
+                {
+                    
+                    Console.WriteLine("false");
+                }
+                Console.WriteLine(_ParkingPlaceForTicketSelect.id.ToString());
+                Console.WriteLine(_ParkingPlaceForTicketSelect.Name);
+            }
+        }
+
+        //get which parking place is selected
         public ParkingPlaceData SelectedParkingPlace
         {
             get
@@ -56,24 +87,53 @@ namespace CarParKing.ModelView
             set
             {
                 OnPropertyChanged("SelectedParkingSpace");
-                if (_SelectedParkingPlace != null)
+                _SelectedParkingPlace = value;
+                if (_SelectedParkingPlace == null)
                 {
-                    _SelectedParkingPlace = value;
-                    if (_SelectedParkingPlace != null)
-                    {
-                        Console.WriteLine(_SelectedParkingPlace.id.ToString());
-                    }
+                    _SelectedParkingPlace = new ParkingPlaceData();
                 }
+                Console.WriteLine(_SelectedParkingPlace.id.ToString());
             }
         }
 
+        //create parking place
+        public int createParkingPlace()
+        {
+            Webservice Service = new Webservice();
+            return Service.createParkingPlace(SelectedParkingPlace);
+        }
+
+        public int editParkingPlace()
+        {
+            Webservice Service = new Webservice();
+            return Service.editParkingPlace(SelectedParkingPlace);
+        }
+
+        //delete parking place
+        public int deleteParkingPlace()
+        {
+            Webservice Service = new Webservice();
+            
+            if(SelectedParkingPlace != null)
+            {
+                SelectedParkingPlace.deleted = 1;
+                return Service.editParkingPlace(SelectedParkingPlace);
+            }
+            return 1;
+        }
 
         //get all parking places from webservice
         public void getAllParkingPlacesFromWebservice()
         {
             //clear list
-            ParkingPlace.Clear();
-
+            if(ParkingPlace == null)
+            {
+                ParkingPlace = new ObservableCollection<ParkingPlaceData>();
+            }
+            else
+            {
+                ParkingPlace.Clear();
+            }
             Webservice Service = new Webservice();
             Service.getAllParkingPlaces();
             for (int i = 0; i < Service.ParkingPlaceList.Count; i++)
@@ -90,8 +150,8 @@ namespace CarParKing.ModelView
             Tickets.Clear();
 
             Webservice Service = new Webservice();
-            Service.getAllTickets(_SelectedParkingPlace.id);
-            if (_SelectedParkingPlace.Name != null)
+            Service.getAllTickets(_ParkingPlaceForTicketSelect.id);
+            if (_ParkingPlaceForTicketSelect.Name != null)
             {
                 for (int i = 0; i < Service.TicketList.Count; i++)
                 {
@@ -107,8 +167,8 @@ namespace CarParKing.ModelView
             Tickets.Clear();
 
             Webservice Service = new Webservice();
-            Service.getInactiveTickets(_SelectedParkingPlace.id);
-            if (_SelectedParkingPlace != null)
+            Service.getInactiveTickets(_ParkingPlaceForTicketSelect.id);
+            if (_ParkingPlaceForTicketSelect != null)
             {
                 for (int i = 0; i < Service.TicketList.Count; i++)
                 {
@@ -124,9 +184,9 @@ namespace CarParKing.ModelView
             Tickets.Clear();
 
             Webservice Service = new Webservice();
-            if (_SelectedParkingPlace != null)
+            if (_ParkingPlaceForTicketSelect != null)
             {
-                Service.getActiveTickets(_SelectedParkingPlace.id);
+                Service.getActiveTickets(_ParkingPlaceForTicketSelect.id);
                 for (int i = 0; i < Service.TicketList.Count; i++)
                 {
                     Tickets.Add(Service.TicketList.ElementAt(i));

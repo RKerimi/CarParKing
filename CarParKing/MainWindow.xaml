@@ -16,7 +16,7 @@
         
     </Window.Resources>
 
-    <Grid>
+    <Grid DataContext="{Binding Source={StaticResource carParkViewModel}}">
 
         <!-- Grid Definition-->
         <Grid.RowDefinitions>
@@ -34,7 +34,7 @@
         <!-- Menu Bar -->
         <Menu Grid.Row="0" Grid.Column="1" IsMainMenu="True" DockPanel.Dock="Top" VerticalAlignment="Top">
             <MenuItem VerticalAlignment="Center" Header="_View">
-                <MenuItem Header="_Übersicht"/>
+                <MenuItem Header="_Übersicht" Loaded="loadParkingPlaces"/>
                 <MenuItem Header="TicketList" Click="Ticketview_Click " />
                 <MenuItem Header="ParkingList" Click="ParkingView_Click" />
                 <MenuItem Header="Exit" InputGestureText="Ctrl+E">
@@ -54,9 +54,8 @@
         </Menu>
         <ComboBox Width="200 " HorizontalAlignment="Left" 
                   Grid.Row="1" Grid.Column="1" materialDesign:HintAssist.Hint="Bitte wälen Sie eine Parkanlage"  
-                  RenderTransformOrigin="0,-5" Margin="392,374,0,10" Height="39">
-            <ComboBoxItem >FH Salzburg</ComboBoxItem>
-            <ComboBoxItem >Landeskrankenhaus</ComboBoxItem>
+                  RenderTransformOrigin="0,-5" Margin="392,374,0,10" Height="39" ItemsSource="{Binding ParkingPlace}" DisplayMemberPath="Name"
+                  SelectedValue="{Binding ParkingPlaceForTicketSelect, Mode=OneWay}" DropDownOpened="ComboBox_DropDownOpened" DropDownClosed="ComboBox_DropDownClosed" >
         </ComboBox>
                 <Image VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="0" Grid.Column="0"
                 Source="Image\Logo.PNG" 

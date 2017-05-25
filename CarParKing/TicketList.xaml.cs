@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarParKing.ModelView;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,7 @@ namespace CarParKing
     {
 
         //https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references
-        private TicketList tmp = (TicketList)App.Current.Resources["ticketlist"];
+        private CarParkViewModel tmp = (CarParkViewModel)App.Current.Resources["carParkViewModel"];
 
         public TicketList()
         {
@@ -34,45 +35,14 @@ namespace CarParKing
             throw new NotImplementedException();
         }
 
-
-        /*private void GetAllTicket(object sender, RoutedEventArgs e)
-        {
-            tmp.getAllTicketsFromWebservice();
-        }
-
-        private void GetInactiveTicket(object sender, RoutedEventArgs e)
-        {
-            tmp.getInactiveTicketsFromWebservice();
-        }
-
-        private void GetActiveTicket(object sender, RoutedEventArgs e)
-        {
-            tmp.getActiveTicketsFromWebservice();
-        }*/
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           
-            
-                this.NavigationService.Navigate(new EditTicket());
-
+            this.NavigationService.Navigate(new EditTicket());
         }
 
-
-
-        /*private void PageLoaded(object sender, RoutedEventArgs e)
+        private void getAllTickets(object sender, RoutedEventArgs e)
         {
-            //clear list
-            tmp.clearList();
-        }*/
-        /*private void ticketClick(object sender, RoutedEventArgs e)
-        {
-            ticketPage.Content = new TicketUbersicht();
+            tmp.getAllParkingPlacesFromWebservice();
         }
-
-        private void umsatzClick(object sender, RoutedEventArgs e)
-        {
-            ticketPage.Content = new Umsatzansicht();
-        }*/
     }
 }

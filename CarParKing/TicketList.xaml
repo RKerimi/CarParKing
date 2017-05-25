@@ -12,7 +12,7 @@
 >
 
 
-    <Grid>
+    <Grid DataContext="{Binding Source={StaticResource carParkViewModel}}">
         <!-- Grid Definition-->
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
@@ -27,24 +27,23 @@
         <!--Side Nav Grid definition -->
         <StackPanel Grid.Column="0" Grid.Row="1">
 
-            <Button Grid.Column="0" Grid.Row="0" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Alle</Button>
+            <Button Grid.Column="0" Grid.Row="0" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8" Click="getAllTickets">Alle</Button>
             <Button Grid.Column="0" Grid.Row="1" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Aktive</Button>
             <Button Grid.Column="0" Grid.Row="2" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Inaktive</Button>
             <Button Grid.Column="0" Grid.Row="3" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Bearbeiten</Button>
-            <Button Click="Button_Click" Grid.Column="0" Grid.Row="4" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Ticket</Button>
             <Button Grid.Column="0" Grid.Row="5" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Löschen</Button>
         </StackPanel>
 
 
 
         <StackPanel Grid.Column="1"  Grid.Row="1" Margin="99,0,-99,10"  >
-            <DataGrid x:Name="DataGrid1" HorizontalAlignment="Left" VerticalAlignment="Top"  AutoGenerateColumns="True"
+            <DataGrid x:Name="DataGrid1" HorizontalAlignment="Left" VerticalAlignment="Top"  AutoGenerateColumns="False"
                   SelectedItem="{Binding SelectedTicket}" ItemsSource="{Binding Tickets, Mode=OneWay}" Margin="0,10,0,0">
                 <DataGrid.Columns>
-                    <DataGridTextColumn  Header="Ticketnummer"/>
-                    <DataGridTextColumn Header="Einfahrtszeit"/>
-                    <DataGridTextColumn  Header="Ausfahrtszeit"/>
-                    <DataGridTextColumn  Header="Preis"/>
+                    <DataGridTextColumn Binding="{Binding TicketId, Mode=OneWay}" Header="Ticketnummer"/>
+                    <DataGridTextColumn Binding="{Binding EntryTime, Mode=OneWay}" Header="Einfahrtszeit"/>
+                    <DataGridTextColumn Binding="{Binding ExitTime, Mode=OneWay}" Header="Ausfahrtszeit"/>
+                    <DataGridTextColumn Binding="{Binding TicketPrice, Mode=OneWay}" Header="Preis"/>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
