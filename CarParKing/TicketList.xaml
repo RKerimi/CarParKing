@@ -30,35 +30,31 @@
 
         </Grid.ColumnDefinitions>
         <!--Side Nav Grid definition -->
-        <StackPanel Grid.Column="0" Margin="0,46,0,0" Height="201" VerticalAlignment="Top" >
-            <Button Grid.Column="0" Grid.Row="0" Height="Auto"  Width="61"  HorizontalAlignment="Left" Margin="10,10,0,10" FontFamily="8" Click="getAllTickets" Foreground="#FFFBFAFA" RenderTransformOrigin="0.5,0.5">
+
+        <StackPanel Grid.Column="0" Margin="0,46,0,-113" Height="315" VerticalAlignment="Top" >
+            <Button Grid.Column="0" Grid.Row="0" Height="32"  Width="71"  HorizontalAlignment="Left" Margin="10,10,0,10" FontFamily="8" Click="getAllTickets" Foreground="#FFFBFAFA" RenderTransformOrigin="0.5,0.5">
                 <Button.Background>
-                    <SolidColorBrush Color="#FFAAB3FF"/>
+                    <SolidColorBrush Color="#FF7884CC"/>
                 </Button.Background> Alle
             </Button>
-            <Button Grid.Column="0" Grid.Row="1" Height="Auto"  Width="61"  HorizontalAlignment="Left" Margin="10,10,0,10" FontFamily="8" Foreground="#FFF9F9F9">
+            <Button Grid.Column="0" Grid.Row="1" Height="30"  Width="71"  HorizontalAlignment="Left" Margin="10,10,0,10" FontFamily="8" Foreground="#FFF9F9F9">
                 <Button.Background>
                     <SolidColorBrush Color="{DynamicResource MaterialPrimary}"/>
                 </Button.Background> Aktive
             </Button>
-            <Button Grid.Column="0" Grid.Row="2" Height="Auto"  Width="61"  HorizontalAlignment="Left" Margin="10,10,0,10" FontFamily="8" Foreground="#FFF9F9F9">
+            <Button Grid.Column="0" Grid.Row="2" Height="30"  Width="71"  HorizontalAlignment="Left" Margin="10,10,0,10" FontFamily="8" Foreground="#FFF9F9F9">
                 <Button.Background>
                     <SolidColorBrush Color="{DynamicResource MaterialPrimary}"/>
                 </Button.Background> Inaktive
             </Button>
-            <Button Grid.Column="0" Grid.Row="3" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8" Foreground="#FFF9F9F9">
-                <Button.Background>
-                    <SolidColorBrush Color="{DynamicResource MaterialPrimary}"/>
-                </Button.Background> Bearbeiten
-            </Button>
-            <Button Grid.Column="0" Grid.Row="5" Height="Auto"  Width="61"  HorizontalAlignment="Left" Margin="10,10,0,10" FontFamily="8" Foreground="#FFF9F9F9">
+            <Button Grid.Column="0" Grid.Row="5" Height="31"  Width="71"  HorizontalAlignment="Left" Margin="10,10,0,10" FontFamily="8" Foreground="#FFF9F9F9">
                 <Button.Background>
                     <SolidColorBrush Color="{DynamicResource MaterialPrimary}"/>
                 </Button.Background> Löschen
             </Button>
         </StackPanel>
 
-
+        <TextBlock VerticalAlignment="Top" RenderTransformOrigin="0.501,3.438" HorizontalAlignment="Left" Margin="240,19,0,0" Height="20" FontWeight="Bold" FontSize="16" FontStyle="Italic" Grid.Column="1"><Run Text="Ticketübersicht"/></TextBlock>
         <DataGrid Grid.Column="1" Grid.Row="0" x:Name="DataGrid1"  Margin="146,69,240,-60"
                   SelectedItem="{Binding SelectedTicket}" ItemsSource="{Binding Tickets, Mode=OneWay}" FontWeight="Bold" AutoGenerateColumns="False" >
             <DataGrid.Background>

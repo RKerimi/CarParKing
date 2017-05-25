@@ -12,26 +12,27 @@
         <Color x:Key="Button2">#FFAAB3FF</Color>
         <Color x:Key="Button3">#FFAAB3FF</Color>
         <Color x:Key="Background">#FFB3E5FC</Color>
+        <Color x:Key="Color1">#FF5C6BC0</Color>
     </Page.Resources>
 
     <Grid DataContext="{Binding Source={StaticResource carParkViewModel}}">
         <!--Side Nav Grid definition -->
         <StackPanel Grid.Column="0" Margin="0,50,0,62">
             <StackPanel.Background>
-                <SolidColorBrush Color="{DynamicResource Background}"/>
+                <SolidColorBrush Color="{DynamicResource Color1}"/>
             </StackPanel.Background>
-            <TextBlock VerticalAlignment="Top" RenderTransformOrigin="0.501,3.438" HorizontalAlignment="Left" Margin="312,10,0,10"><Run Text="Parkplatzübersicht"/></TextBlock>
-            <Button Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10,10,0,10" FontFamily="8" Click="edit" Content="Bearbeiten">
+            <TextBlock VerticalAlignment="Top" RenderTransformOrigin="0.501,3.438" HorizontalAlignment="Left" Margin="312,10,0,10" Height="20" FontWeight="Bold" FontSize="16" FontStyle="Italic"><Run Text="Parkplatzübersicht"/></TextBlock>
+            <Button Height="29"  Width="80"  HorizontalAlignment="Left" Margin="10,10,0,10" FontFamily="8" Click="edit" Content="Bearbeiten">
                 <Button.Background>
                     <SolidColorBrush Color="{DynamicResource Button1}"/>
                 </Button.Background>
             </Button>
-            <Button Click="createNew"  Height="Auto"  Width="61"  HorizontalAlignment="Left" Margin="10,10,0,10" FontFamily="8" Content="Neu">
+            <Button Click="createNew"  Height="30"  Width="80"  HorizontalAlignment="Left" Margin="10,10,0,10" FontFamily="8" Content="Neu">
                 <Button.Background>
                     <SolidColorBrush Color="{DynamicResource Button2}"/>
                 </Button.Background>
             </Button>
-            <Button Height="Auto"  Width="61"  HorizontalAlignment="Left" Margin="10,10,0,10" FontFamily="8" Click="delete" Content="Löschen">
+            <Button Height="30"  Width="80"  HorizontalAlignment="Left" Margin="10,10,0,10" FontFamily="8" Click="delete" Content="Löschen">
                 <Button.Background>
                     <SolidColorBrush Color="{DynamicResource Button3}"/>
                 </Button.Background>
@@ -39,7 +40,7 @@
         </StackPanel>
 
         <DataGrid x:Name="DataGrid1"  AutoGenerateColumns="False" Grid.Row="0"
-                  SelectedItem="{Binding SelectedParkingPlace}" ItemsSource="{Binding ParkingPlace, Mode=OneWay}" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" Margin="172,84,0,0" SelectedIndex="1" Width="385" Background="#FFAAB3FF" >
+                  SelectedItem="{Binding SelectedParkingPlace}" ItemsSource="{Binding ParkingPlace, Mode=OneWay}" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" Margin="171,106,0,0" SelectedIndex="1" Width="385" Background="#FFAAB3FF" >
             <DataGrid.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

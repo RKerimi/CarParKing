@@ -19,11 +19,13 @@
         <Color x:Key="Color4">#FFAAB3FF</Color>
         <Color x:Key="Color5">#FFAAB3FF</Color>
         <Color x:Key="Color6">#FFB3E5FC</Color>
+        <Color x:Key="Color7">#FF5C6BC0</Color>
     </Page.Resources>
     <Grid Margin="0,50,0,0" Height="364" VerticalAlignment="Top">
         <Grid.Background>
-            <SolidColorBrush Color="{DynamicResource Color6}"/>
+            <SolidColorBrush Color="{DynamicResource Color7}"/>
         </Grid.Background>
+        <TextBlock VerticalAlignment="Top" RenderTransformOrigin="0.501,3.438" HorizontalAlignment="Left" Margin="312,10,0,10" Height="20" FontWeight="Bold" FontSize="16" FontStyle="Italic"><Run Text="Parkplatzdetails"/></TextBlock>
         <Grid Margin="194,119,181,76" >
 
             <Button   FontFamily="3" Margin="136,113,108,32" Click="Save" Content="Speichern" >
@@ -31,6 +33,7 @@
                     <SolidColorBrush Color="#FFB2BB74"/>
                 </Button.Background>
             </Button>
+            
             <Button Height="Auto"  FontFamily="3" Margin="147,142,119,4" Content="Abbrechen" Click="cancel" Background="#FFF3F3F3" RenderTransformOrigin="0.534,1.484" />
             <Label  Margin="0,0,0,137" Content="Anzahl Parkplätze: " HorizontalAlignment="Left" Width="131" FontWeight="Bold" VerticalContentAlignment="Center" VerticalAlignment="Bottom">
                 <Label.Background>
