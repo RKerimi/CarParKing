@@ -10,51 +10,55 @@
       Title="EditTicket"
        Height="520" Width="720"
 >
+    <Page.Resources>
+        <Color x:Key="MaterialPLight">#FFAAB3FF</Color>
+        <Color x:Key="Color1">#FFAAB3FF</Color>
+        <Color x:Key="Color2">#FFAAB3FF</Color>
+        <Color x:Key="Color3">#FFAAB3FF</Color>
+    </Page.Resources>
 
     <Grid>
-        <materialDesign:Card Padding="32" Height="248" Width="Auto" Margin="77,25,109,0" >
-            <!-- Grid Forms -->
-            <Grid Grid.Column="0" Grid.Row="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"  />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
+        <!-- Grid Forms -->
+
+        <!-- Forms-->
+
+        <StackPanel Grid.Column="1" >
+            <StackPanel.Background>
+                <SolidColorBrush Color="{DynamicResource MaterialPLight}"/>
+            </StackPanel.Background>
+            <Border Margin="0 0 0 5" BorderBrush="Black" BorderThickness="1">
+                <TextBox  Width="150"/>
+            </Border>
+            <Border  Margin="0 0 0 5"  BorderBrush="Black" BorderThickness="1">
+                <TextBox  Width="150" Text="{Binding EntryTime}"  />
+            </Border>
+            <Border  Margin="0 0 0 5" BorderBrush="Black" BorderThickness="1">
+                <TextBox  Width="150" Text="{Binding ExitTime}"   />
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1">
+                <TextBox  Width="150" Text="{Binding TicketPrice}"/>
+            </Border>
+        </StackPanel>
+
+        <!-- Label Forms-->
+        <StackPanel >
+            <Label  Margin="0 0 0 5"  Content="TicketNr.: " RenderTransformOrigin="0.5,0.50">
+                <Label.Background>
+                    <SolidColorBrush Color="{DynamicResource Color2}"/>
+                </Label.Background>
+            </Label>
+            <Label  Margin="0 0 0 5" Grid.Row="2" Grid.Column="0" Content="Einfahrtszeit: ">
+                <Label.Background>
+                    <SolidColorBrush Color="{DynamicResource Color1}"/>
+                </Label.Background>
+            </Label>
+            <Label   Content="Ausfahrtszeit: " Background="#FFAAB3FF" Height="36" Margin="26,0,96,0"/>
 
 
-                <!-- Forms-->
+        </StackPanel>
+        <Button Height="Auto"  FontFamily="3" Margin="284,353,291,147" >Speichern</Button>
 
-                <StackPanel Grid.Column="1" >
-                    <Border Margin="0 0 0 5" BorderBrush="Black" BorderThickness="1">
-                        <TextBox  Width="150"/>
-                    </Border>
-                    <Border  Margin="0 0 0 5"  BorderBrush="Black" BorderThickness="1">
-                        <TextBox  Width="150" Text="{Binding EntryTime}"  />
-                    </Border>
-                    <Border  Margin="0 0 0 5" BorderBrush="Black" BorderThickness="1">
-                        <TextBox  Width="150" Text="{Binding ExitTime}"   />
-                    </Border>
-                    <Border BorderBrush="Black" BorderThickness="1">
-                        <TextBox  Width="150" Text="{Binding TicketPrice}"/>
-                    </Border>
-                </StackPanel>
 
-                <!-- Label Forms-->
-                <StackPanel>
-                    <Label  Margin="0 0 0 5"  Content="TicketNr.: " RenderTransformOrigin="0.5,0.50"/>
-                    <Label FlowDirection="LeftToRight"  Margin="0 0 0 5" Grid.Row="2" Grid.Column="0" Content="Einfahrtszeit: "/>
-                    <Label  Margin="0 0 0 5" Grid.Row="2" Grid.Column="0" Content="Ausfahrtszeit: "/>
-                    <Label   Margin="0 0 0 5" Grid.Row="3" Grid.Column="0" Content="Betrag: "/>
-
-                </StackPanel>
-                <Button  Grid.ColumnSpan="2" Height="Auto"  FontFamily="3" Margin="90,15,100,-39" Grid.Row="3" >Speichern</Button>
-            </Grid>
-        </materialDesign:Card>
     </Grid>
 </Page>

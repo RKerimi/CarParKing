@@ -93,3 +93,4 @@ C:\Users\mhaas\Source\Repos\CarParKing\CarParKing\obj\Debug\CarParKing.csproj.Ge
 C:\Users\mhaas\Source\Repos\CarParKing\CarParKing\obj\Debug\CarParKing.exe
 C:\Users\mhaas\Source\Repos\CarParKing\CarParKing\obj\Debug\CarParKing.pdb
 C:\Users\mhaas\Source\Repos\CarParKing\CarParKing\obj\Debug\CarParKing.csprojResolveAssemblyReference.cache
+C:\Users\rkeri\Documents\Visual Studio 2017\Projects\CarParKing\CarParKing\obj\Debug\GeneratedInternalTypeHelper.g.cs

@@ -199,8 +199,8 @@
     <None Include="Connected Services\ServiceReference1\CarParKing.ServiceReference1.ticket.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference1\CarParkParking.wsdl" />
-    <None Include="Connected Services\ServiceReference1\CarParkParking.xsd">
+    <None Include="Connected Services\ServiceReference1\CarParkParking1.wsdl" />
+    <None Include="Connected Services\ServiceReference1\CarParkParking1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Data.edmx.diagram">

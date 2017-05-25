@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://NOTEBOOK36:8082/Parkingplace-war/CarParkParking?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://RKerimi:8080/Parkingplace-war/CarParkParking?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CarParkParking.xsd" MetadataType="Schema" ID="7f7b1a36-d39a-4141-9722-5b7ab03cca31" SourceId="1" SourceUrl="http://notebook36:8082/Parkingplace-war/CarParkParking?xsd=1" />
-    <MetadataFile FileName="CarParkParking.wsdl" MetadataType="Wsdl" ID="4327e03a-5bba-4cf8-8197-3167a32161be" SourceId="1" SourceUrl="http://notebook36:8082/Parkingplace-war/CarParkParking?wsdl" />
+    <MetadataFile FileName="CarParkParking1.xsd" MetadataType="Schema" ID="622bebb4-47f9-4698-884b-8e032898abe5" SourceId="1" SourceUrl="http://rkerimi:8080/Parkingplace-war/CarParkParking?xsd=1" />
+    <MetadataFile FileName="CarParkParking1.wsdl" MetadataType="Wsdl" ID="82117d90-d1a9-48e7-902b-8ee4e9200f2c" SourceId="1" SourceUrl="http://rkerimi:8080/Parkingplace-war/CarParkParking?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -8,45 +8,76 @@
         xmlns:local="clr-namespace:CarParKing"
         mc:Ignorable="d" 
         Title="TicketList" 
-        Height="520" Width="720"
->
+        Height="475" Width="720">
+    <Page.Resources>
+        <Color x:Key="MaterialPrimary">#FF7884CC</Color>
+        <Color x:Key="MaterialPLight">#FFAAB3FF</Color>
+        <Color x:Key="Color1">#FFB3E5FC</Color>
+    </Page.Resources>
 
 
-    <Grid DataContext="{Binding Source={StaticResource carParkViewModel}}">
-        <!-- Grid Definition-->
+    <Grid DataContext="{Binding Source={StaticResource carParkViewModel}}" Height="371" VerticalAlignment="Bottom" Margin="0,0,0,66">
+        <Grid.Background>
+            <SolidColorBrush Color="{DynamicResource Color1}"/>
+        </Grid.Background>
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto" MinWidth="689"/>
 
         </Grid.ColumnDefinitions>
         <!--Side Nav Grid definition -->
-        <StackPanel Grid.Column="0" Grid.Row="1">
-
-            <Button Grid.Column="0" Grid.Row="0" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8" Click="getAllTickets">Alle</Button>
-            <Button Grid.Column="0" Grid.Row="1" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Aktive</Button>
-            <Button Grid.Column="0" Grid.Row="2" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Inaktive</Button>
-            <Button Grid.Column="0" Grid.Row="3" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Bearbeiten</Button>
-            <Button Grid.Column="0" Grid.Row="5" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8">Löschen</Button>
+        <StackPanel Grid.Column="0" Margin="0,46,0,0" Height="201" VerticalAlignment="Top" >
+            <Button Grid.Column="0" Grid.Row="0" Height="Auto"  Width="61"  HorizontalAlignment="Left" Margin="10,10,0,10" FontFamily="8" Click="getAllTickets" Foreground="#FFFBFAFA" RenderTransformOrigin="0.5,0.5">
+                <Button.Background>
+                    <SolidColorBrush Color="#FFAAB3FF"/>
+                </Button.Background> Alle
+            </Button>
+            <Button Grid.Column="0" Grid.Row="1" Height="Auto"  Width="61"  HorizontalAlignment="Left" Margin="10,10,0,10" FontFamily="8" Foreground="#FFF9F9F9">
+                <Button.Background>
+                    <SolidColorBrush Color="{DynamicResource MaterialPrimary}"/>
+                </Button.Background> Aktive
+            </Button>
+            <Button Grid.Column="0" Grid.Row="2" Height="Auto"  Width="61"  HorizontalAlignment="Left" Margin="10,10,0,10" FontFamily="8" Foreground="#FFF9F9F9">
+                <Button.Background>
+                    <SolidColorBrush Color="{DynamicResource MaterialPrimary}"/>
+                </Button.Background> Inaktive
+            </Button>
+            <Button Grid.Column="0" Grid.Row="3" Height="Auto"  Width="Auto"  HorizontalAlignment="Left" Margin="10" FontFamily="8" Foreground="#FFF9F9F9">
+                <Button.Background>
+                    <SolidColorBrush Color="{DynamicResource MaterialPrimary}"/>
+                </Button.Background> Bearbeiten
+            </Button>
+            <Button Grid.Column="0" Grid.Row="5" Height="Auto"  Width="61"  HorizontalAlignment="Left" Margin="10,10,0,10" FontFamily="8" Foreground="#FFF9F9F9">
+                <Button.Background>
+                    <SolidColorBrush Color="{DynamicResource MaterialPrimary}"/>
+                </Button.Background> Löschen
+            </Button>
         </StackPanel>
 
 
+        <DataGrid Grid.Column="1" Grid.Row="0" x:Name="DataGrid1"  Margin="146,69,240,-60"
+                  SelectedItem="{Binding SelectedTicket}" ItemsSource="{Binding Tickets, Mode=OneWay}" FontWeight="Bold" AutoGenerateColumns="False" >
+            <DataGrid.Background>
+                <SolidColorBrush Color="{DynamicResource MaterialPLight}"/>
+            </DataGrid.Background>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding TicketId, Mode=OneWay}" Header="Ticketnummer">
+                    <DataGridTextColumn.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FF270B0B" Offset="1"/>
+                        </LinearGradientBrush>
+                    </DataGridTextColumn.Foreground>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding EntryTime, Mode=OneWay}" Header="Einfahrtszeit"/>
+                <DataGridTextColumn Binding="{Binding ExitTime, Mode=OneWay}" Header="Ausfahrtszeit"/>
+                <DataGridTextColumn Binding="{Binding TicketPrice, Mode=OneWay}" Header="Preis"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
-        <StackPanel Grid.Column="1"  Grid.Row="1" Margin="99,0,-99,10"  >
-            <DataGrid x:Name="DataGrid1" HorizontalAlignment="Left" VerticalAlignment="Top"  AutoGenerateColumns="False"
-                  SelectedItem="{Binding SelectedTicket}" ItemsSource="{Binding Tickets, Mode=OneWay}" Margin="0,10,0,0">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding TicketId, Mode=OneWay}" Header="Ticketnummer"/>
-                    <DataGridTextColumn Binding="{Binding EntryTime, Mode=OneWay}" Header="Einfahrtszeit"/>
-                    <DataGridTextColumn Binding="{Binding ExitTime, Mode=OneWay}" Header="Ausfahrtszeit"/>
-                    <DataGridTextColumn Binding="{Binding TicketPrice, Mode=OneWay}" Header="Preis"/>
-                </DataGrid.Columns>
-            </DataGrid>
-        </StackPanel>
-        <Border BorderBrush="Black" BorderThickness="1" Margin="99,10,-97,29" Grid.Row="1" Grid.Column="1"/>
     </Grid>
 </Page>

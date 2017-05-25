@@ -60,11 +60,14 @@ namespace CarParKing
             {
                 MessageBox.Show("deleted");
                 this.NavigationService.Navigate(new ParkingList());
+                Frame f = new Frame();
             }
             else
             {
                 MessageBox.Show("deleting failed");
             }
         }
+
+
     }
 }

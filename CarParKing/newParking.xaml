@@ -10,47 +10,47 @@
       d:DesignHeight="520" d:DesignWidth="720"
       Title="newParking">
 
-    <Grid>
-        <materialDesign:Card Padding="32" Height="248" Width="Auto" Margin="77,25,109,0" >
-            <!-- Grid Forms -->
-            <Grid Grid.Column="0" Grid.Row="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"  />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
+    <Page.Resources>
+        <Color x:Key="MaterialPLight">#FFAAB3FF</Color>
+        <Color x:Key="Color1">#FFAAB3FF</Color>
+        <Color x:Key="Color2">#FFAAB3FF</Color>
+        <Color x:Key="Color3">#FFAAB3FF</Color>
+        <Color x:Key="Color4">#FFAAB3FF</Color>
+        <Color x:Key="Color5">#FFAAB3FF</Color>
+        <Color x:Key="Color6">#FFB3E5FC</Color>
+    </Page.Resources>
+    <Grid Margin="0,50,0,0" Height="364" VerticalAlignment="Top">
+        <Grid.Background>
+            <SolidColorBrush Color="{DynamicResource Color6}"/>
+        </Grid.Background>
+        <Grid Margin="194,119,181,76" >
 
+            <Button   FontFamily="3" Margin="136,113,108,32" Click="Save" Content="Speichern" >
+                <Button.Background>
+                    <SolidColorBrush Color="#FFB2BB74"/>
+                </Button.Background>
+            </Button>
+            <Button Height="Auto"  FontFamily="3" Margin="147,142,119,4" Content="Abbrechen" Click="cancel" Background="#FFF3F3F3" RenderTransformOrigin="0.534,1.484" />
+            <Label  Margin="0,0,0,137" Content="Anzahl Parkplätze: " HorizontalAlignment="Left" Width="131" FontWeight="Bold" VerticalContentAlignment="Center" VerticalAlignment="Bottom">
+                <Label.Background>
+                    <SolidColorBrush Color="{DynamicResource MaterialPLight}"/>
+                </Label.Background>
+            </Label>
+            <Label  Margin="0,41,214,100" Grid.Column="0" Content="Parkplatzname: " RenderTransformOrigin="0.464,1.673" FontWeight="Bold">
+                <Label.Background>
+                    <SolidColorBrush Color="{DynamicResource MaterialPLight}"/>
+                </Label.Background>
+            </Label>
+            <Label  Margin="0,75,214,66" Grid.Column="0" Content="Parkplatzkosten: " RenderTransformOrigin="0.464,1.673" FontWeight="Bold">
+                <Label.Background>
+                    <SolidColorBrush Color="{DynamicResource MaterialPLight}"/>
+                </Label.Background>
+            </Label>
 
-                <!-- Forms-->
-
-                <StackPanel Grid.Column="1" >
-                    <Border Margin="0 0 0 5" BorderBrush="Black" BorderThickness="1">
-                        <TextBox Width="150" Text="{Binding SelectedParkingPlace.Name, Source={StaticResource carParkViewModel}}" />
-                    </Border>
-                    <Border  Margin="0 0 0 5"  BorderBrush="Black" BorderThickness="1">
-                        <TextBox  Width="150" Text="{Binding SelectedParkingPlace.numberOfParkingSlots, Source={StaticResource carParkViewModel}}" />
-                    </Border>
-                    <Border  Margin="0 0 0 5" BorderBrush="Black" BorderThickness="1">
-                        <TextBox  Width="150" Text="{Binding SelectedParkingPlace.pricePerHour, Source={StaticResource carParkViewModel}}" />
-                    </Border>
-                    <Border BorderBrush="Black" BorderThickness="1"/>
-                </StackPanel>
-
-                <!-- Label Forms-->
-                <StackPanel>
-                    <Label  Margin="0 0 0 5" Content="Parkplatzname: "/>
-                    <Label  Margin="0 0 0 5" Content="Anzahl Parkplätze: "/>
-                    <Label  Margin="0 0 0 5" Content="Kosten/h: "/>
-                </StackPanel>
-                <Button  Grid.ColumnSpan="2" Height="Auto"  FontFamily="3" Margin="90,15,100,-39" Grid.Row="3" Click="Save" >Speichern</Button>
-                <Button Height="Auto"  FontFamily="3" Margin="63,15,-5,-39" Grid.Row="3" Content="Abbrechen" Grid.Column="1" Click="cancel" />
-            </Grid>
-        </materialDesign:Card>
+            <TextBox Text="{Binding SelectedParkingPlace.Name, Source={StaticResource carParkViewModel}}" Margin="158,0,0,142" VerticalAlignment="Bottom" />
+            <TextBox Width="187" Text="{Binding SelectedParkingPlace.numberOfParkingSlots, Source={StaticResource carParkViewModel}}" Margin="0,45,0,0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalContentAlignment="Center" VerticalAlignment="Top" />
+            <TextBox Width="187" Text="{Binding SelectedParkingPlace.pricePerHour, Source={StaticResource carParkViewModel}}" Margin="0,79,0,0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalContentAlignment="Center" VerticalAlignment="Top" />
+        </Grid>
     </Grid>
 </Page>

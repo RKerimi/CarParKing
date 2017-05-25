@@ -7,15 +7,8 @@
 
   <Application.Resources>
         <vm:CarParkViewModel x:Key="carParkViewModel"/>
-        <ResourceDictionary x:Key="asdf">
-        <ResourceDictionary.MergedDictionaries>
-                
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
-          <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-          <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
-          <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />  
-        </ResourceDictionary.MergedDictionaries>
-      </ResourceDictionary>
+       
+        <Color x:Key="MaterialPLight">#FFAAB3FF</Color>
 
     </Application.Resources>
 </Application>

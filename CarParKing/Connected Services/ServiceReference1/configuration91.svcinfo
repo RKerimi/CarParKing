@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="LTNIjGVCNf/7QJSzymLG2sWtQd4=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="83xsCY3TLODbPV91PoCdVmSFcqE=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="ParkingPortBinding">
       <properties>
@@ -94,7 +94,7 @@
           <serializedValue>TransportSelected</serializedValue>
         </property>
         <property path="/security/transport/extendedProtectionPolicy/customServiceNames" isComplexType="true" isExplicitlyDefined="false" clrType="System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>(Collection)</serializedValue>
+          <serializedValue>(Sammlung)</serializedValue>
         </property>
         <property path="/security/transport/realm" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="ParkingPort" contract="ServiceReference1.Parking" bindingType="basicHttpBinding" address="http://notebook36:8082/Parkingplace-war/CarParkParking" bindingConfiguration="ParkingPortBinding">
+    <endpoint name="ParkingPort" contract="ServiceReference1.Parking" bindingType="basicHttpBinding" address="http://rkerimi:8080/Parkingplace-war/CarParkParking" bindingConfiguration="ParkingPortBinding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://notebook36:8082/Parkingplace-war/CarParkParking</serializedValue>
+          <serializedValue>http://rkerimi:8080/Parkingplace-war/CarParkParking</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

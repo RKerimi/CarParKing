@@ -30,6 +30,8 @@ namespace CarParKing
             InitializeComponent();
         }
 
+
+
         private void Ticketview_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.NavigationService.Navigate(new TicketList());
@@ -59,6 +61,7 @@ namespace CarParKing
         {
             tmp.ParkingPlaceDropDown = false;
         }
+
 
 
 
